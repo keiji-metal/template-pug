@@ -1,0 +1,47 @@
+/*=========================*/
+/* media-query */
+/*=========================*/
+
+$breakpoints: (
+    sp: "(max-width:767px)",
+    tab: "(min-width:768px) and (max-width: 1280px)",
+    sp_tab: "(min-width:0px) and (max-width: 1280px)",
+    pc: "(min-width: 1281px)",
+);
+
+@mixin media($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/*=========================*/
+/* z-index */
+/*=========================*/
+
+$layer : (
+    default: 1,
+    );
+@mixin z-index($key) {
+    z-index: map-get($layer, $key) ;
+}
+
+// @include z-index();
+
+/*=========================*/
+/* clamp */
+/*=========================*/
+
+$min: 375px;
+$max: 1280px;
+
+@mixin clamp($min-font-size, $max-font-size, $min-width: $min-width, $max-width: $max) {
+    font-size: clamp(
+        $min-font-size,
+        calc(#{$min-font-size} + (#{$max-font-size} - #{$min-font-size}) * ((100vw - #{$min-width}) / (#{$max-width} - #{$min-width}))),
+        $max-font-size
+    );
+}
+
+// @include clamp(16px,32px);
+

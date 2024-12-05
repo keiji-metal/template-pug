@@ -1,0 +1,64 @@
+
+@use "color" as *;
+@use "variables" as *;
+
+/*=========================*/
+/* base */
+/*=========================*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	box-shadow: none;
+	outline: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  // font-size: calc(16 / 1920 * 100vw);
+  line-height: 1;
+}
+
+body {
+  background-color: $color-white; //毎度変更
+  max-width: 100%;
+  line-height: 1;
+  color: #1a1a1a; //毎度変更
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
+  min-height: 100vh;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+
+main {
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+table {
+    border: 1px solid #eee;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
